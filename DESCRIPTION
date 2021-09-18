@@ -5,9 +5,27 @@ Authors@R: person('Eduardo', 'Almeida', email = 'eduardo.almeida7393@gmail.com',
 Description: Design a shiny dashboard for marine dataset under shiny.semantics under femantics ui framework
 License: What license is it under?
 Imports: 
+    attempt,
     config,
+    dplyr,
+    DT,
+    glue,
     golem,
-    shiny
+    htmltools,
+    leaflet,
+    processx,
+    readr,
+    shiny,
+    shiny.semantic,
+    tidyr,
+    waiter
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US
+URL: https://github.com/Eduardodudu/MarineDashboard
+BugReports: https://github.com/Eduardodudu/MarineDashboard/issues
