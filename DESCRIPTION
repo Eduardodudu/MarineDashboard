@@ -1,0 +1,13 @@
+Package: MarineDashboard
+Title: Design a shiny dashboard for marine dataset
+Version: 0.0.0.9000
+Authors@R: person('Eduardo', 'Almeida', email = 'eduardo.almeida7393@gmail.com', role = c('cre', 'aut'))
+Description: Design a shiny dashboard for marine dataset under shiny.semantics under femantics ui framework
+License: What license is it under?
+Imports: 
+    config,
+    golem,
+    shiny
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
