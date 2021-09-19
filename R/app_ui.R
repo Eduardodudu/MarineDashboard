@@ -9,9 +9,30 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic 
-    fluidPage(
-      h1("MarineDashboard")
+    shiny.semantic::semanticPage(title = "Marine Dashboard",
+                                 style = "background-color:#efefef",
+                                 
+                                 div(class = "ui container grid",
+                                     
+                                     div(class = "row",
+                                        mod_Selected_vessel_ui("Selected_vessel_ui_1")
+                                        ),
+                                     
+                                     div(class = "row",
+                                        mod_dashboard_cards_ui("dashboard_cards_ui_1")
+                                        ),
+                                     
+                                     div(class = "row",
+                                        mod_leaflet_map_ui("leaflet_map_ui_1")
+                                        ),
+                                     
+                                     div(class = "row",
+                                        mod_date_info_ui("date_info_ui_1")
+                                        )
+                                    )
+                                 
     )
+    
   )
 }
 
@@ -30,7 +51,7 @@ golem_add_external_resources <- function(){
   )
  
   tags$head(
-    favicon(),
+    favicon(ext = "png"),
     bundle_resources(
       path = app_sys('app/www'),
       app_title = 'MarineDashboard'
