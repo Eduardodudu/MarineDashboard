@@ -15,16 +15,25 @@
 
 ## Dependencies ----
 ## Add one line by package you want to add as dependency
-usethis::use_package( "thinkr" )
+usethis::use_package("leaflet")
+usethis::use_package("dplyr")
+usethis::use_package("tidyr")
+usethis::use_package("readr")
+usethis::use_package( "geodist" )
+usethis::use_package("shiny.semantic")
+usethis::use_package("purrrlyr")
+usethis::use_pipe()
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module( name = "name_of_module1" ) # Name of the module
-golem::add_module( name = "name_of_module2" ) # Name of the module
+golem::add_module( name = "Selected_vessel" )
+golem::add_module( name = "dashboard_cards" )
+golem::add_module( name = "leaflet_map" )
+golem::add_module( name = "date_info" )
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
-golem::add_fct( "helpers" ) 
+# golem::add_fct( "helpers" ) 
 golem::add_utils( "helpers" )
 
 ## External resources
@@ -35,11 +44,12 @@ golem::add_css_file( "custom" )
 
 ## Add internal datasets ----
 ## If you have data in your package
-usethis::use_data_raw( name = "my_dataset", open = FALSE ) 
+usethis::use_data_raw( name = "marine_dataset", open = FALSE ) 
+usethis::use_data_raw( name = "data_description", open = FALSE ) 
 
 ## Tests ----
 ## Add one line by test you want to create
-usethis::use_test( "app" )
+usethis::use_test( "function-cards_container" )
 
 # Documentation
 
@@ -59,10 +69,10 @@ covrpage::covrpage()
 ## service for your application
 ## 
 ## (You'll need GitHub there)
-usethis::use_github()
+usethis::use_github(private = T)
 
 # GitHub Actions
-usethis::use_github_action() 
+usethis::use_github_action()
 # Chose one of the three
 # See https://usethis.r-lib.org/reference/use_github_action.html
 usethis::use_github_action_check_release() 
