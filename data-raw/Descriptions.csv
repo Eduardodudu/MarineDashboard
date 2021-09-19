@@ -1,0 +1,22 @@
+ID, Description, icon, label
+LAT , Ship’s latitude, compass, Latitude
+LON , Ship’s longitude, compass, Longitude
+SPEED , Ship’s speed in knots, tachometer-alt, Speed
+COURSE , Ship’s course as angle, location-arrow, Course
+HEADING , Ship’s compass direction, drafting-compass, Heading
+DESTINATION , Ship’s destination (reported by the crew), location-arrow, Destination
+FLAG , Ship’s flag, flag, Flag
+LENGTH , Ship’s length in meters, ruler, Length
+SHIPNAME , Ship’s name, ship, Ship name
+SHIPTYPE , Ship’s type, ship, Ship type
+SHIP_ID , Ship’s unique identifier, ship, Ship ID
+WIDTH , Ship’s width in meters, ruler, Width
+DWT , Ship’s deadweight in tones, weight, Ship's Deadweight
+DATETIME , Date and time of the observation, calendar-alt, Date and time
+PORT , Current port reported by the vessel, torii-gate, Current port
+Date , Date extracted from DATETIME, calendar-alt, Date
+Week_nb , Week number extracted from date, calendar-alt, Week number
+Ship_type , Ship’s type from SHIPTYPE, ship, Ship type
+Port , Current port assigned based on the ship’s location, torii-gate, Port
+Is_parked , Indicator whether the ship is moving or not, sort-down, Parked
+longest_distance, Longest distance between vessel observations, ruler, Longest distance
