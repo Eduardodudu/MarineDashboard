@@ -9,11 +9,15 @@ Imports:
     config,
     dplyr,
     DT,
+    geodist,
     glue,
     golem,
     htmltools,
     leaflet,
+    magrittr,
+    pkgload,
     processx,
+    purrrlyr,
     readr,
     shiny,
     shiny.semantic,
@@ -23,9 +27,14 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Suggests: 
+    rmarkdown,
+    knitr,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Language: en-US
 URL: https://github.com/Eduardodudu/MarineDashboard
 BugReports: https://github.com/Eduardodudu/MarineDashboard/issues
+Depends: 
+    R (>= 2.10)
+VignetteBuilder: knitr
