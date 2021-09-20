@@ -116,7 +116,7 @@ Ship’s type
 </tr>
 <tr>
 <td style="text-align:left;">
-SHIP\_ID
+SHIPID
 </td>
 <td style="text-align:left;">
 Ship’s unique identifier
@@ -164,7 +164,7 @@ Date extracted from DATETIME
 </tr>
 <tr>
 <td style="text-align:left;">
-Week\_nb
+Weeknb
 </td>
 <td style="text-align:left;">
 Week number extracted from date
@@ -172,7 +172,7 @@ Week number extracted from date
 </tr>
 <tr>
 <td style="text-align:left;">
-Ship\_type
+Shiptype
 </td>
 <td style="text-align:left;">
 Ship’s type from SHIPTYPE
@@ -188,7 +188,7 @@ Current port assigned based on the ship’s location
 </tr>
 <tr>
 <td style="text-align:left;">
-Is\_parked
+Isparked
 </td>
 <td style="text-align:left;">
 Indicator whether the ship is moving or not
@@ -196,7 +196,7 @@ Indicator whether the ship is moving or not
 </tr>
 <tr>
 <td style="text-align:left;">
-longest\_distance
+longestdistance
 </td>
 <td style="text-align:left;">
 Longest distance between vessel observations
@@ -217,18 +217,18 @@ that renders each vessel position under a frequency of time.
 
 <table>
 <caption>
-Top 5 cases of SHIP\_ID
+Top 5 cases
 </caption>
 <thead>
 <tr>
 <th style="text-align:right;">
-SHIP\_ID
+SHIPID
 </th>
 <th style="text-align:right;">
 n
 </th>
 <th style="text-align:left;">
-Last\_SHIPNAME
+LastSHIPNAME
 </th>
 </tr>
 </thead>
@@ -295,7 +295,7 @@ The same happens under SHIPNAME:
 
 <table>
 <caption>
-Top 5 cases of SHIPNAME
+Top 5 cases
 </caption>
 <thead>
 <tr>
@@ -306,14 +306,14 @@ SHIPNAME
 n
 </th>
 <th style="text-align:right;">
-Select\_ID
+SelectID
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-\[SAT-AIS\]
+SATAIS
 </td>
 <td style="text-align:right;">
 19

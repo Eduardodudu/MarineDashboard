@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 
 library(tidyverse)
 library(kableExtra)
+library(stringr)
+library(janitor)
 
 load("data/data_description.rda")
 marine_raw <- readr::read_csv(unz("./data-raw/marineData.zip", "ships.csv"))
@@ -36,7 +38,9 @@ This project aims to design a dashboard using `shiny.semantics` of the [marine d
 Marine dataset has `r nrow(marine_raw)` rows and `r ncol(marine_raw)` variables with the following structure:
 
 ```{r Data structure, echo = F}
-kable(data_description[,1:2])
+data_description[,1:2] %>% 
+   mutate(ID = str_replace_all(ID, "_", "")) %>% 
+   kable()
 ```
 
 The data is a log of the [AIS signal](https://www.marinetraffic.com/blog/information-transmitted-via-ais-signal/) that renders each vessel position under a frequency of time.
@@ -48,14 +52,14 @@ The data is a log of the [AIS signal](https://www.marinetraffic.com/blog/informa
 ```{r SHIP_ID, echo = F}
 
 marine_raw %>% 
-   distinct(SHIP_ID, SHIPNAME) %>% 
-   group_by(SHIP_ID) %>% 
+   distinct(SHIPID = SHIP_ID, SHIPNAME) %>% 
+   group_by(SHIPID) %>% 
    summarise(n = n(),
-             Last_SHIPNAME = last(SHIPNAME)) %>% 
+             LastSHIPNAME = last(SHIPNAME)) %>% 
    filter(n> 1) %>% 
    arrange(-n) %>% 
    head(5) %>% 
-   kable(caption = "Top 5 cases of SHIP_ID")
+   kable(caption = "Top 5 cases")
          
 
 ```
@@ -67,11 +71,12 @@ The same happens under SHIPNAME:
 marine_raw %>% 
      distinct(SHIP_ID, SHIPNAME) %>% 
      group_by(SHIPNAME) %>% 
-     summarise(n = n(), Select_ID = last(SHIP_ID)) %>% 
+     summarise(n = n(), SelectID = last(SHIP_ID)) %>% 
      filter(n> 1) %>% 
      arrange(-n) %>% 
      head(5) %>% 
-     kable(caption = "Top 5 cases of SHIPNAME")
+     mutate(SHIPNAME = str_replace_all(SHIPNAME, "[:punct:]", "")) %>% 
+     kable(caption = "Top 5 cases")
 
 ```
 
