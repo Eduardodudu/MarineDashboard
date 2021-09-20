@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 
 library(tidyverse)
 library(kableExtra)
+library(gt)
 
 load("data/data_description.rda")
 marine_raw <- readr::read_csv(unz("./data-raw/marineData.zip", "ships.csv"))
@@ -36,7 +37,7 @@ This project aims to design a dashboard using `shiny.semantics` of the [marine d
 Marine dataset has `r nrow(marine_raw)` rows and `r ncol(marine_raw)` variables with the following structure:
 
 ```{r Data structure, echo = F}
-kable(data_description[,1:2])
+gt(data_description[,1:2])
 ```
 
 The data is a log of the [AIS signal](https://www.marinetraffic.com/blog/information-transmitted-via-ais-signal/) that renders each vessel position under a frequency of time.
@@ -55,7 +56,7 @@ marine_raw %>%
    filter(n> 1) %>% 
    arrange(-n) %>% 
    head(5) %>% 
-   kable(caption = "Top 5 cases of SHIP_ID")
+   gt()
          
 
 ```
@@ -71,7 +72,7 @@ marine_raw %>%
      filter(n> 1) %>% 
      arrange(-n) %>% 
      head(5) %>% 
-     kable(caption = "Top 5 cases of SHIPNAME")
+     gt()
 
 ```
 
